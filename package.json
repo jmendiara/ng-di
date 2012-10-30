@@ -1,0 +1,35 @@
+{
+  "name": "ng-di",
+  "description": "Spectacular Angular Dependency Injection isolated as a library",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jmendiara/ng-di",
+  "author": {
+    "name": "Javier Mendiara",
+    "email": "jmendiara@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmendiara/ng-di.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jmendiara/ng-di/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jmendiara/ng-di/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/ng-di",
+  "engines": {
+    "node": ">= 0.8.4"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "testacular": "~0.4.0",
+    "grunt-testacular" : "~0.2.0"
+  },
+  "keywords": []
+}
