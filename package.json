@@ -20,12 +20,9 @@
       "url": "https://github.com/jmendiara/ng-di/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "lib/ng-di",
+  "main": "dist/ng-di",
   "engines": {
-    "node": ">= 0.8.4"
-  },
-  "scripts": {
-    "test": "grunt test"
+    "node": "*"
   },
   "devDependencies": {
     "testacular": "~0.4.0",
