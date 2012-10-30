@@ -5,15 +5,20 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: '<json:package.json>',
     meta: {
-      banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+      banner: '/*! \n* <%= pkg.name %> - v<%= pkg.version %> - ' +
         '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
+        '* <%= pkg.description %>\n' +
         '<%= pkg.homepage ? "* " + pkg.homepage + "\n" : "" %>' +
-        '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-        ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
+        '* Adaptation done <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;\n' +
+        '* All credits must go to the AngularJS team.\n' +
+        '* Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %>\n */'
     },
     concat: {
       dist: {
-        src: ['<banner:meta.banner>', '<file_strip_banner:lib/<%= pkg.name %>.js>'],
+        src: ['<banner:meta.banner>',
+          'lib/prefix.tpl',
+          '<file_strip_banner:lib/<%= pkg.name %>.js>',
+          'lib/suffix.tpl'],
         dest: 'dist/<%= pkg.name %>.js'
       }
     },
@@ -23,11 +28,8 @@ module.exports = function(grunt) {
         dest: 'dist/<%= pkg.name %>.min.js'
       }
     },
-    test: {
-      files: ['test/**/*.js']
-    },
     lint: {
-      files: ['grunt.js', 'lib/**/*.js', 'test/**/*.js']
+      files: ['grunt.js', '<config:concat.dist.dest>']
     },
     watch: {
       files: '<config:lint.files>',
@@ -35,8 +37,8 @@ module.exports = function(grunt) {
     },
     jshint: {
       options: {
-        curly: true,
-        eqeqeq: true,
+        curly: false,
+        eqeqeq: false,
         immed: true,
         latedef: true,
         newcap: true,
@@ -71,7 +73,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-testacular');
   // Default task.
-  grunt.registerTask('default', 'lint test concat min');
+  grunt.registerTask('default', 'concat lint min');
 
 
 };

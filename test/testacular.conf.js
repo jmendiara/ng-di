@@ -11,13 +11,13 @@ basePath = '..';
 files = [
   JASMINE,
   JASMINE_ADAPTER,
-  'lib/**/*.js',
-  //'test/**/*.js'
-  'test/test.spec.js'
+  'lib/ng-di.js',
+  'lib/angular-mocks.js',
+  'test/*.js'
 ];
 
 // list of files to exclude
-exclude = ['/test/testacular.conf.js'];
+exclude = ['test/testacular.conf.js'];
 
 // use dots reporter, as travis terminal does not support escaping sequences
 // possible values: 'dots' || 'progress'

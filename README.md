@@ -2,13 +2,15 @@
 
 Spectacular Angular Dependency Injection isolated as a library
 
+**CURRENTLY IN DEVELOPMENT**
+
 ## Getting Started
 ### On the server
 Install the module with: `npm install ng-di`
 
 ```javascript
-var ng_di = require('ng-di');
-ng_di.awesome(); // "awesome"
+var di = require('ng-di');
+di.module(...);
 ```
 
 ### In the browser
@@ -22,7 +24,7 @@ In your web page:
 ```html
 <script src="dist/ng-di.min.js"></script>
 <script>
-awesome(); // "awesome"
+di.module(...)
 </script>
 ```
 
@@ -34,20 +36,22 @@ this.exports = Bocoup.utils;
 </script>
 <script src="dist/ng-di.min.js"></script>
 <script>
-Bocoup.utils.awesome(); // "awesome"
+Bocoup.utils.di.module(...);
 </script>
 ```
 
 ## Documentation
-_(Coming soon)_
+This library simply isolates [AngularJS](http://www.angularjs.org)
+[dependency injection](http://docs.angularjs.org/guide/di), exposing its
+[module API](http://docs.angularjs.org/guide/module) as part of it.
+
+All the DOM management has been removed, and makes this library the ideal artifact for using
+ Javascript Dependency Injection in javascript only apps, libraries...
+
+It's available as `di` instead of `angular`
+
 
 ## Examples
-_(Coming soon)_
-
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](http://gruntjs.com/).
-
-_Also, please don't edit files in the "dist" subdirectory as they are generated via grunt. You'll find source code in the "lib" subdirectory!_
 
 ## Release History
 _(Nothing yet)_
