@@ -1,7 +1,7 @@
 {
   "name": "ng-di",
   "description": "Spectacular Angular Dependency Injection isolated as a library",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/jmendiara/ng-di",
   "author": {
     "name": "Javier Mendiara",

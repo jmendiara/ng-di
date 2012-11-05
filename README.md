@@ -3,13 +3,15 @@
 Spectacular Angular Dependency Injection isolated as a library
 
 **CURRENTLY IN DEVELOPMENT**
+**v0.0.2**
+
 
 ## Getting Started
 ### On the server
 Install the module with: `npm install ng-di`
 
 ```javascript
-var di = require('ng-di');
+var di = require('ng-di').di;
 di.module(...);
 ```
 
@@ -50,11 +52,31 @@ All the DOM management has been removed, and makes this library the ideal artifa
 
 It's available as `di` instead of `angular`
 
+All the angular utility functions (noop, forEach...) are exposed as `$utils` service (constant) in the `di` module
+
+_NOTE: Specs are coming_
 
 ## Examples
+```javascript```
+//we create our module, passing built-in
+var myModule = di.module('myModule', ['di']);
+
+var $TestService = ['$utils', function ($utils){
+  this.getAngularCallbacksCounter = function (){
+    return $utils.callbacks.counter;   //same than $window.angular.callbacks.counter
+  }
+}];
+
+myModule.service('$test', $TestService);
+di.injector(['myModule']).invoke(['$test', function ($test){
+  console.log("The callbacks counter is", $test.getAngularCallbacksCounter());
+}]);
+
 
 ## Release History
-_(Nothing yet)_
+v0.0.2 new service in module `di` exposing `$utils` functions
+v0.0.1 First approach
+
 
 ## License
 Copyright (c) 2012 Javier Mendiara  

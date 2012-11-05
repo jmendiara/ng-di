@@ -1,5 +1,5 @@
 /*! 
-* ng-di - v0.0.1 - 2012-10-30
+* ng-di - v0.0.2 - 2012-11-05
 * Spectacular Angular Dependency Injection isolated as a library
 * https://github.com/jmendiara/ng-di
 * Adaptation done 2012 Javier Mendiara;
@@ -769,8 +769,7 @@
     return arg;
   }
 
-
-  /**
+   /**
    * jmendiara
    * from loader.js
    */
@@ -1063,7 +1062,7 @@
 
 
   function publishExternalAPI(angular){
-    extend(angular, {
+    var $utils = extend(angular, {
       'copy': copy,
       'extend': extend,
       'equals': equals,
@@ -1090,6 +1089,12 @@
     });
 
     angularModule = setupModuleLoader(window, nameToExport);
+
+    angularModule(nameToExport, [], ['$provide',
+      function diModule($provide) {
+        $provide.constant('$utils', $utils);
+      }
+    ]);
   }
 
 
