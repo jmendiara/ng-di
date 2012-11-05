@@ -57,7 +57,7 @@ All the angular utility functions (noop, forEach...) are exposed as `$utils` ser
 _NOTE: Specs are coming_
 
 ## Examples
-```javascript```
+```javascript
 //we create our module, passing built-in
 var myModule = di.module('myModule', ['di']);
 
@@ -71,11 +71,11 @@ myModule.service('$test', $TestService);
 di.injector(['myModule']).invoke(['$test', function ($test){
   console.log("The callbacks counter is", $test.getAngularCallbacksCounter());
 }]);
-
+```
 
 ## Release History
-v0.0.2 new service in module `di` exposing `$utils` functions
-v0.0.1 First approach
+* v0.0.2 new service in module `di` exposing `$utils` functions
+* v0.0.1 First approach
 
 
 ## License
