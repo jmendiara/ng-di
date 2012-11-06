@@ -28,6 +28,13 @@ module.exports = function(grunt) {
         dest: 'dist/<%= pkg.name %>.min.js'
       }
     },
+    copy: {
+      dist: {
+        files: {
+          'dist/ng-di-mocks.js': 'lib/ng-di-mocks.js'
+        }
+      }
+    },
     lint: {
       files: ['grunt.js', '<config:concat.dist.dest>']
     },
@@ -72,8 +79,10 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-testacular');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+
   // Default task.
-  grunt.registerTask('default', 'concat lint min');
+  grunt.registerTask('default', 'concat lint min copy:dist');
 
 
 };

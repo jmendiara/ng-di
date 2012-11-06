@@ -1,2 +1,2 @@
 
-}(typeof exports === 'object' && exports || this));
+})(typeof exports === 'object' && exports || this);

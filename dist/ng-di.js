@@ -1,5 +1,5 @@
 /*! 
-* ng-di - v0.0.2 - 2012-11-05
+* ng-di - v0.0.3 - 2012-11-06
 * Spectacular Angular Dependency Injection isolated as a library
 * https://github.com/jmendiara/ng-di
 * Adaptation done 2012 Javier Mendiara;
@@ -9,9 +9,7 @@
 
 (function(window, undefined) {
 
-//(function(window, undefined) {
-
-  /**
+/**
    * Where must be published the library. In Angular is 'angular'
    * @type {String}
    */
@@ -1830,13 +1828,12 @@
   }
 
 
-    /**
-     * jmendiara
-     * from publishExternalApis.js
-     */
-    publishExternalAPI(window[nameToExport]);
-
-//}(typeof exports === 'object' && exports || this));
+  /**
+   * jmendiara
+   * from publishExternalApis.js
+   */
+  publishExternalAPI(window[nameToExport]);
 
 
-}(typeof exports === 'object' && exports || this));
+
+})(typeof exports === 'object' && exports || this);

@@ -12,7 +12,7 @@ files = [
   JASMINE,
   JASMINE_ADAPTER,
   'lib/ng-di.js',
-  'lib/angular-mocks.js',
+  'lib/ng-di-mocks.js',
   'test/*.js'
 ];
 

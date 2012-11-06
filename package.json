@@ -1,7 +1,7 @@
 {
   "name": "ng-di",
   "description": "Spectacular Angular Dependency Injection isolated as a library",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/jmendiara/ng-di",
   "author": {
     "name": "Javier Mendiara",
@@ -26,7 +26,8 @@
   },
   "devDependencies": {
     "testacular": "~0.4.0",
-    "grunt-testacular" : "~0.2.0"
-  },
+		"grunt-testacular" : "~0.2.0",
+		"grunt-contrib-copy": "~0.3.1"
+	},
   "keywords": []
 }
