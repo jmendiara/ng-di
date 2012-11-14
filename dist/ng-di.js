@@ -1,5 +1,5 @@
 /*! 
-* ng-di - v0.0.3 - 2012-11-06
+* ng-di - v0.0.4 - 2012-11-09
 * Spectacular Angular Dependency Injection isolated as a library
 * https://github.com/jmendiara/ng-di
 * Adaptation done 2012 Javier Mendiara;
@@ -77,6 +77,8 @@
       slice             = [].slice,
       push              = [].push,
       toString          = Object.prototype.toString,
+      msie              = int((/msie (\d+)/.exec(lowercase(window.navigator.userAgent)) || [])[1]),
+
 
       /** @name angular */
       di           = window[nameToExport] || (window[nameToExport] = {}),
@@ -1083,7 +1085,23 @@
       'isDate': isDate,
       'lowercase': lowercase,
       'uppercase': uppercase,
-      'callbacks': {counter: 0}
+      'callbacks': {counter: 0},
+      'valueFn': valueFn,
+      'nextUid': nextUid,
+      'arrayRemove': arrayRemove,
+      'concat': concat,
+      'assertArgFn': assertArgFn,
+      'map': map,
+      'sliceArgs':sliceArgs,
+      'int':int,
+      'msie': msie,
+      'size': size,
+      'slice': slice,
+      'indexOf': indexOf ,
+      'forEachSorted': forEachSorted,
+      'trim': trim,
+      'isFile': isFile,
+      'assertArg': assertArg
     });
 
     angularModule = setupModuleLoader(window, nameToExport);

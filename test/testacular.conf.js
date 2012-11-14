@@ -21,7 +21,7 @@ exclude = ['test/testacular.conf.js'];
 
 // use dots reporter, as travis terminal does not support escaping sequences
 // possible values: 'dots' || 'progress'
-reporter = 'dots';
+reporters = ['dots'];
 
 // these are default values, just to show available options
 
