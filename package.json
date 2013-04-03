@@ -1,15 +1,15 @@
 {
   "name": "ng-di",
-  "description": "Spectacular Angular Dependency Injection isolated as a library",
-  "version": "0.0.4",
+  "description": "Dependency Injection for Javascript. Both for Browser and Node",
+  "version": "0.2.0",
   "homepage": "https://github.com/jmendiara/ng-di",
-  "author": {
-    "name": "Javier Mendiara",
-    "email": "jmendiara@gmail.com"
-  },
+  "author": "Javier Mendiara Cañardo <jmendiara@gmail.com>",
+  "contributors": [
+    "Milán Nagy <123.wizek@gmail.com>"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jmendiara/ng-di.git"
+    "url": "git://github.com/jmendiara/ng-di.git"
   },
   "bugs": {
     "url": "https://github.com/jmendiara/ng-di/issues"
@@ -20,14 +20,33 @@
       "url": "https://github.com/jmendiara/ng-di/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "dist/ng-di",
+  "main": "lib/ng-di",
   "engines": {
-    "node": "*"
+    "node": ">= 0.6.0"
+  },
+  "scripts": {
+    "test": "grunt test"
   },
   "devDependencies": {
-    "testacular": "~0.4.0",
-		"grunt-testacular" : "~0.2.0",
-		"grunt-contrib-copy": "~0.3.1"
-	},
-  "keywords": []
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.2.0",
+    "grunt-contrib-compress": "0.4.1",
+    "grunt-contrib-clean": "0.4.0",
+    "karma": "~0.8",
+    "yaml-js": "0.0.5",
+    "shelljs": "0.1.2",
+    "grunt-karma": "~0.4.1",
+    "grunt-jasmine-node": "https://github.com/jmendiara/grunt-jasmine-node/tarball/master",
+    "jasmine-node": "1.5.0"
+  },
+  "keywords": [
+    "dependency-injection",
+    "di",
+    "angular-di",
+    "node-di",
+    "js-di",
+    "js",
+    "node"
+  ],
+  "dependencies": {}
 }
