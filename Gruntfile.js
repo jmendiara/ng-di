@@ -1,34 +1,27 @@
 'use strict';
-var files = require('./tools/files').files;
-var util = require('./tools/grunt/utils.js');
-
 
 module.exports = function(grunt) {
   //grunt plugins
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-jasmine-node');
-  grunt.loadTasks('tools/grunt');
 
 
+  var files = grunt.file.readJSON('tools/files.json'),
+    filesMain = [].concat(
+      ['tools/wrap/prefix.tpl'],
+      files.browser,
+      files.src,
+      ['tools/wrap/suffix.tpl']
+    );
 
   // Project configuration.
   grunt.initConfig({
-
-    pkg: '<json:package.json>',
-    files: '<json:tools/files.json>',
-
-    meta: {
-      banner: '/*! \n* <%= pkg.name %> - v<%= pkg.version %> - ' +
-        '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-        '* <%= pkg.description %>\n' +
-        '<%= pkg.homepage ? "* " + pkg.homepage + "\n" : "" %>' +
-        '* Adaptation done <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;\n' +
-        '* All credits must go to the AngularJS team.\n' +
-        '* Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %>\n */'
-    },
-    //VERSION: VERSION,
+    pkg: grunt.file.readJSON('package.json'),
 
     jasmine_node: {
       specNameMatcher: "spec", // load only specs containing specNameMatcher
@@ -45,58 +38,48 @@ module.exports = function(grunt) {
       }
     },
 
-    clean: {build: ['build']},
+    clean: {dist: ['dist']},
 
     concat: {
+      options: {
+        stripBanners: true,
+        banner: grunt.file.read('tools/banner.tpl')
+      },
       dist: {
-        src: ['<banner:meta.banner>',
-          'tools/wrap/prefix.tpl',
-          '<file_strip_banner:lib/<%= pkg.name %>.js>',
-          'tools/wrap/suffix.tpl'],
+        src: filesMain,
         dest: 'dist/<%= pkg.name %>.js'
       }
     },
-    min: {
-      dist: {
-        src: ['<banner:meta.banner>', '<config:concat.dist.dest>'],
-        dest: 'dist/<%= pkg.name %>.min.js'
-      }
-    },
-    copy: {
+
+    uglify: {
+      options: {
+        banner: grunt.file.read('tools/banner.tpl')
+      },
       dist: {
         files: {
-          'dist/ng-di-mocks.js': 'lib/ng-di-mocks.js'
+          'dist/<%= pkg.name %>.min.js': 'dist/<%= pkg.name %>.js'
         }
       }
     },
-     /*
-    build: {
-      ng_di: {
-        dest: 'build/ng-di.js',
-        src: util.wrap([files['browser'], files['src']], 'pl')
-      },
-      mocks: {
-        dest: 'build/ng-di-mock.js',
-        src: ['lib/mock.js']
+
+    copy: {
+      mock: {
+        files:[
+          {src: [files.mock], dest: 'dist/mock.js', flatten: true}
+        ]
       }
     },
-
-
-
 
     compress: {
-      build: {
-        options: {archive: 'build/' + dist +'.zip'},
-        src: ['**'], cwd: 'build', expand: true, dot: true, dest: dist + '/'
+      dist: {
+        options: {archive: 'dist/<%= pkg.name %>.zip'},
+        src: ['**'], cwd: 'dist', expand: true, dot: true, dest: 'dist/'
       }
-    },
-
-    write: {
-      versionTXT: {file: 'build/version.txt', val: VERSION.full},
-      versionJSON: {file: 'build/version.json', val: JSON.stringify(VERSION)}
-    }*/
+    }
   });
 
   grunt.registerTask('test', ['jasmine_node', 'karma']);
+  grunt.registerTask('build', ['clean:dist', 'concat:dist', 'uglify:dist', 'copy:mock', 'compress:dist']);
 
+  grunt.registerTask('default', ['test', 'build']);
 };

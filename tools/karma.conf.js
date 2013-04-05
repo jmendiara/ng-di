@@ -6,6 +6,8 @@
 basePath = '../';
 
 
+//TODO: Sync this when Karma allows better configuration process
+
 // list of files / patterns to load in the browser
 files = [
   JASMINE,
@@ -31,7 +33,7 @@ exclude = [
 
 // test results reporter to use
 // possible values: 'dots', 'progress', 'junit'
-reporters = ['progress'];
+reporters = ['dots'];
 
 
 // web server port
