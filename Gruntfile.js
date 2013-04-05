@@ -48,7 +48,12 @@ module.exports = function(grunt) {
       dist: {
         src: filesMain,
         dest: 'dist/<%= pkg.name %>.js'
+      },
+      banner: {
+        src: files.mock,
+        dest: 'dist/mock.js'
       }
+
     },
 
     uglify: {
@@ -79,7 +84,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('test', ['jasmine_node', 'karma']);
-  grunt.registerTask('build', ['clean:dist', 'concat:dist', 'uglify:dist', 'copy:mock', 'compress:dist']);
+  grunt.registerTask('build', ['clean:dist', 'concat', 'uglify:dist', 'compress:dist']);
 
   grunt.registerTask('default', ['test', 'build']);
 };

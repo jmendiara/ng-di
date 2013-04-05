@@ -1,3 +1,15 @@
+/*!
+ * ng-di - v0.2.0 - 2013-04-05
+ * Dependency Injection for Javascript. Both for Browser and Node
+ * https://github.com/jmendiara/ng-di
+ * Adaptation done 2013 Javier Mendiara Cañardo
+ * Licensed MIT
+ * https://github.com/jmendiara/ng-di/blob/master/LICENSE-MIT
+ *
+ * All credits must go to the AngularJS team.
+ * AngularJS Licensed under MIT License.
+*/
+
 (function (exports){
 
   var di;

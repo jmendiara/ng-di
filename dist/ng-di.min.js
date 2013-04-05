@@ -4,6 +4,7 @@
  * https://github.com/jmendiara/ng-di
  * Adaptation done 2013 Javier Mendiara Cañardo
  * Licensed MIT
+ * https://github.com/jmendiara/ng-di/blob/master/LICENSE-MIT
  *
  * All credits must go to the AngularJS team.
  * AngularJS Licensed under MIT License.
