@@ -49,7 +49,7 @@ module.exports = function(grunt) {
         src: filesMain,
         dest: 'dist/<%= pkg.name %>.js'
       },
-      banner: {
+      mock: {
         src: files.mock,
         dest: 'dist/mock.js'
       }

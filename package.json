@@ -5,12 +5,12 @@
   "homepage": "https://github.com/jmendiara/ng-di",
   "author": {
     "name": "Javier Mendiara Cañardo",
-    "email": "<jmendiara@gmail.com>"
+    "email": "jmendiara@gmail.com"
   },
   "contributors": [
     {
       "name": "Milán Nagy",
-      "email": "<123.wizek@gmail.com>"
+      "email": "123.wizek@gmail.com"
     }
   ],
   "repository": {
@@ -27,6 +27,9 @@
     }
   ],
   "main": "lib/ng-di",
+  "files": {
+
+  },
   "engines": {
     "node": ">= 0.6.0"
   },

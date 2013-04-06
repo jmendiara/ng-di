@@ -19,7 +19,7 @@ files = [
   'lib/injector.js',
   'lib/ng-di.js',
 
-  'lib/mock/mock.js',
+  'mock/index.js',
   'test/spec_helper.js',
   'test/*.js'
 ];

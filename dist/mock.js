@@ -15,7 +15,7 @@
   var di;
   if (typeof window !== 'undefined'){
     if (typeof require !== 'undefined'){
-      exports = require('./mock/mock');
+      exports = require('./mock');
     }
     else {
       window.mock = exports;
@@ -23,7 +23,7 @@
     di = window.di;
   }
   else {
-    di = require('./../ng-di');
+    di = require('./../lib/ng-di');
   }
 
   var currentSpec = null;

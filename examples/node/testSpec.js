@@ -1,5 +1,5 @@
 
-var mock = require('../../lib/mock'),
+var mock = require('../.'),
   App = require('./app');
 
 describe('Sample Test', function(){

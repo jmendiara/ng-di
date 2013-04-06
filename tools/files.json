@@ -10,11 +10,11 @@
     "lib/browser.js"
   ],
   "test": [
-    "lib/mock.js",
+    "lib/index.js",
     "test/spec_helper.js",
     "test/*.js"
   ],
   "mock": [
-    "lib/mock/mock.js"
+    "mock/index.js"
   ]
 }
