@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple App</title>
+    <script type="text/javascript" src="../../dist/ng-di.min.js"></script>
+
+    <script type="text/javascript" src="app.js"></script>
+
+</head>
+<body>
+<p id="test"></p>
+<script type="text/javascript">
+
+    di.module('App').run(function (constant){
+        document.getElementById('test').innerHTML = constant;
+    });
+
+    //Once all is loaded, we get the injector to init the App
+    di.injector(['App']);
+
+</script>
+</body>
+</html>
