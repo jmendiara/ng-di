@@ -67,14 +67,6 @@ module.exports = function(grunt) {
       }
     },
 
-    copy: {
-      mock: {
-        files:[
-          {src: [files.mock], dest: 'dist/mock.js', flatten: true}
-        ]
-      }
-    },
-
     compress: {
       dist: {
         options: {archive: 'dist/<%= pkg.name %>.zip'},

@@ -2,7 +2,7 @@
 
 var utils = require('../lib/utils'),
   di = require('../lib/ng-di'),
-  mock = require('../lib/mock'),
+  mock = require('../lib/mock/mock'),
   injectorMod = require('../lib/injector');
 
 

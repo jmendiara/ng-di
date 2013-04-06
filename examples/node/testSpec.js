@@ -1,10 +1,10 @@
 
-var mock = require('../../lib/mock.js'),
+var mock = require('../../lib/mock'),
   App = require('./app');
 
 describe('Sample Test', function(){
   beforeEach(mock.module('App'));
-  it('should work in browser', mock.inject(function(constant){
+  it('should work in node', mock.inject(function(constant){
     expect(constant).toBe("It works!");
   }));
 });

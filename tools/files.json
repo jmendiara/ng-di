@@ -15,6 +15,6 @@
     "test/*.js"
   ],
   "mock": [
-    "lib/mock.js"
+    "lib/mock/mock.js"
   ]
 }

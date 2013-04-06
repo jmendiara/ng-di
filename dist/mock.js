@@ -1,5 +1,5 @@
 /*!
- * ng-di - v0.2.0 - 2013-04-05
+ * ng-di - v0.2.0 - 2013-04-06
  * Dependency Injection for Javascript. Both for Browser and Node
  * https://github.com/jmendiara/ng-di
  * Adaptation done 2013 Javier Mendiara Cañardo
@@ -15,7 +15,7 @@
   var di;
   if (typeof window !== 'undefined'){
     if (typeof require !== 'undefined'){
-      exports = require('./mock');
+      exports = require('./mock/mock');
     }
     else {
       window.mock = exports;
@@ -23,7 +23,7 @@
     di = window.di;
   }
   else {
-    di = require('./ng-di');
+    di = require('./../ng-di');
   }
 
   var currentSpec = null;
