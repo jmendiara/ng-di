@@ -1,48 +1,33 @@
+(function (exports){
 
-/**
- * @license AngularJS v1.0.2
- * (c) 2010-2012 Google, Inc. http://angularjs.org
- * License: MIT
- *
- */
-
-/**
- * @ngdoc overview
- * @name angular.mock
- * @description
- *
- * Namespace from 'angular-mocks.js' which contains testing related code.
- */
-
-(function(window){
-  if(!window.jasmine){
-    return;
- }
-  var angular = window.di,
-      jasmine = window.jasmine;
-
-  angular.mock = {};
-
-  window.afterEach(function() {
-    var spec = getCurrentSpec();
-    var injector = spec.$injector;
-
-    spec.$injector = null;
-    spec.$modules = null;
-
-    angular.forEach(angular.callbacks, function(val, key) {
-      delete angular.callbacks[key];
-    });
-    angular.callbacks.counter = 0;
-  });
-
-  function getCurrentSpec() {
-    return jasmine.getEnv().currentSpec;
+  var di;
+  if (typeof window !== 'undefined'){
+    if (typeof require !== 'undefined'){
+      exports = require('./mock');
+    }
+    else {
+      window.mock = exports;
+    }
+    di = window.di;
+  }
+  else {
+    di = require('./../lib/ng-di');
   }
 
+  var currentSpec = null;
+
+  beforeEach(function() {
+    currentSpec = this;
+  });
+
+  afterEach(function() {
+    currentSpec.$injector = null;
+    currentSpec.$modules = null;
+    currentSpec = null;
+  });
+
   function isSpecRunning() {
-    var spec = getCurrentSpec();
-    return spec && spec.queue.running;
+    return currentSpec && currentSpec.queue.running;
   }
 
   /**
@@ -51,7 +36,6 @@
    * @description
    *
    * *NOTE*: This is function is also published on window for easy access.<br>
-   * *NOTE*: Only available with {@link http://pivotal.github.com/jasmine/ jasmine}.
    *
    * This function registers a module configuration code. It collects the configuration information
    * which will be used when the injector is created by {@link angular.mock.inject inject}.
@@ -62,22 +46,20 @@
    *        aliases or as anonymous module initialization functions. The modules are used to
    *        configure the injector. The 'ng' and 'ngMock' modules are automatically loaded.
    */
-  window.module = angular.mock.module = function() {
+  exports.module = function() {
+    var moduleFns = Array.prototype.slice.call(arguments, 0), i, l;
+    return isSpecRunning() ? workFn() : workFn;
     /////////////////////
     function workFn() {
-      var spec = getCurrentSpec();
-      if (spec.$injector) {
-        throw new Error('Injector already created, can not register a module!');
+      if (currentSpec.$injector) {
+        throw Error('Injector already created, can not register a module!');
       } else {
-        var modules = spec.$modules || (spec.$modules = []);
-        angular.forEach(moduleFns, function(module) {
-          modules.push(module);
-        });
+        var modules = currentSpec.$modules || (currentSpec.$modules = []);
+        for (i = 0, l = moduleFns.length; i < l; i++){
+          modules.push(moduleFns[i]);
+        }
       }
     }
-    var moduleFns = Array.prototype.slice.call(arguments, 0);
-    return isSpecRunning() ? workFn() : workFn;
-
   };
 
   /**
@@ -86,7 +68,6 @@
    * @description
    *
    * *NOTE*: This is function is also published on window for easy access.<br>
-   * *NOTE*: Only available with {@link http://pivotal.github.com/jasmine/ jasmine}.
    *
    * The inject function wraps a function into an injectable function. The inject() creates new
    * instance of {@link AUTO.$injector $injector} per test, which is then used for
@@ -133,30 +114,31 @@
    *
    * @param {...Function} fns any number of functions which will be injected using the injector.
    */
-  window.inject = angular.mock.inject = function() {
+  exports.inject = function() {
     var blockFns = Array.prototype.slice.call(arguments, 0);
     var errorForStack = new Error('Declaration Location');
-
+    return isSpecRunning() ? workFn() : workFn;
     /////////////////////
     function workFn() {
-      var spec = getCurrentSpec();
-      var modules = spec.$modules || [];
-      var injector = spec.$injector;
-      if (!injector) {
-        injector = spec.$injector = angular.injector(modules);
-      }
+      var modules = currentSpec.$modules || [];
 
+      var injector = currentSpec.$injector;
+      if (!injector) {
+        injector = currentSpec.$injector = di.injector(modules);
+      }
       for(var i = 0, ii = blockFns.length; i < ii; i++) {
         try {
-          injector.invoke(blockFns[i] || angular.noop, this);
+          injector.invoke(blockFns[i] || (function(){}), this);
         } catch (e) {
-          if(e.stack) e.stack +=  '\n' + errorForStack.stack;
+          if(e.stack){
+            e.stack +=  '\n' + errorForStack.stack;
+          }
           throw e;
         } finally {
           errorForStack = null;
         }
       }
     }
-    return isSpecRunning() ? workFn() : workFn;
   };
-})(this);
+
+})(typeof exports === 'undefined'? this: exports);

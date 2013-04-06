@@ -1,0 +1,20 @@
+{
+  "src": [
+    "lib/utils.js",
+    "lib/module.js",
+    "lib/hashmap.js",
+    "lib/injector.js",
+    "lib/ng-di.js"
+  ],
+  "browser": [
+    "lib/browser.js"
+  ],
+  "test": [
+    "lib/index.js",
+    "test/spec_helper.js",
+    "test/*.js"
+  ],
+  "mock": [
+    "mock/index.js"
+  ]
+}
