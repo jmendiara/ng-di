@@ -2,9 +2,14 @@
 
 Spectacular Angular Dependency Injection isolated as a library. Working in Browser and Node enviroments
 
-**Current Version 0.1.0**
+**Current Canary Version 0.1.0**
 
 Status: STABLE API - UNSTABLE Code sources location - All Test passing
+
+
+**Current Version 0.0.4**
+
+Status: UNSTABLE API - UNSTABLE Code sources location - No test
 
 
 ## Getting Started
