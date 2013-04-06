@@ -17,10 +17,9 @@ di.module(...);
 ```
 
 ### In the browser
-Download the [production version][min] or the [development version][max].
+Download the [production version](dist/ng-di.min.js) or the [development version](dist/ng-di.js).
 
-[min]: https://raw.github.com/jmendiara/ng-di/master/dist/ng-di.min.js
-[max]: https://raw.github.com/jmendiara/ng-di/master/dist/ng-di.js
+You can also download a [ZIP version](dist/ng-di.zip) with both flavours and the mocks helper.
 
 In your web page:
 
@@ -82,6 +81,37 @@ Include the [mock helper][mock] in your test flow.
 <script type="text/javascript" src="mock.js"></script>
 <!-- mock.module and mock.inject are available -->
 ```
+
+## Development
+
+**Install all dependencies**
+
+```shell
+npm install 
+```
+
+ng-di uses grunt 0.4.x for building the browser version and for testing. You will need to have installed grunt-cli as global
+
+**Pass all test in browser and node.**
+
+Relies on Karma and assumes a Chrome browser installed on your machine
+```shell
+grunt test
+```
+
+**Build the browser version**
+
+Creates all browser compatible code on /dist directory
+```shell
+grunt build
+```
+
+**Test and build**
+
+```shell
+grunt 
+```
+
 
 ## Aim of this project
 The goal behind this project is closing the gap between the browser and node enviroments for developing testable libraries
