@@ -2,6 +2,10 @@
 
 Spectacular Angular Dependency Injection isolated as a library. Working in Browser and Node enviroments
 
+**Current Version 0.1.0**
+
+Status: STABLE API - UNSTABLE Code sources location - All Test passing
+
 
 ## Getting Started
 ### On the server
@@ -91,7 +95,9 @@ problem by yourself. Ideas are always welcome!
 
 ## Release History
 
-### v0.2.0 
+ng-di uses [semantic versioning](http://semver.org/)
+
+### v0.1.0 - UNSTABLE
 * Completely rewrite internals using commonsJS module.
 * Adding mocks for both environments
 
