@@ -1,5 +1,5 @@
 
-var di = require('../../lib/ng-di');
+var di = require('ng-di');
 
 var App = di.module('App', [])
   .constant('constant', 'It works!');
