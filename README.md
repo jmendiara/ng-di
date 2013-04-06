@@ -5,20 +5,32 @@ Spectacular Angular Dependency Injection isolated as a library. Working in Brows
 **Current Canary Version 0.1.0**
 
 Status: STABLE API - UNSTABLE Code sources location - All Test passing
+* Recommended * 
 
 
 **Current Version 0.0.4**
 
 Status: UNSTABLE API - UNSTABLE Code sources location - No test
+* Not recommended * 
 
 
 ## Getting Started
 ### On the server
-Install the module with: `npm install ng-di`
+Install the canary version module with: 
+```bash
+npm install ng-di@canary
+```
 
+Or the pre-development one 
+```
+npm install ng-di
+```
+
+Once installed, start using it
 ```javascript
 var di = require('ng-di');
 di.module(...);
+di.injector(...);
 ```
 
 ### In the browser
@@ -31,7 +43,8 @@ In your web page:
 ```html
 <script src="dist/ng-di.min.js"></script>
 <script>
-di.module(...)
+di.module(...);
+di.injector(...);
 </script>
 ```
 
