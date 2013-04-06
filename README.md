@@ -49,24 +49,35 @@ Other non documented utility methods here are for private usage, and can be remo
 
 Please, refer to Angular Documentation on this topics, as ng-di exposes them as-is.
 
+## Examples
+You can go to the [examples](examples) folder to see how to use in [node](examples/node) and [browser](examples/browser)
+
 ## Testing
 The tests provided have been written in jasmine, and are executed in browser with Karma Runner and in Node with jasmine-node
 
 For your convenience on writting testable code using ng-di, as well as in angular, two utility functions are exposed
-
-*Node*
 ```javascript
-
+mock.module(...);
+mock.inject(...);
 ```
 
-*Browser*
-```javascript
+You can read through [code documentation](mock/index.js#L65) or learn by watching [examples](#examples)
 
+### node
+```javascript
+var mock = require('ng-di/mock'),
+//mock.module and mock.inject are available
 ```
 
+### Browser
+Include the [mock helper][mock] in your test flow.
 
-## Examples
-You can go to the [examples](examples) folder to see how to use in [node](examples/node) and [browser](examples/browser) 
+[mock]: https://raw.github.com/jmendiara/ng-di/master/dist/mock.js
+
+```html
+<script type="text/javascript" src="mock.js"></script>
+<!-- mock.module and mock.inject are available -->
+```
 
 ## Aim of this project
 The goal behind this project is closing the gap between the browser and node enviroments for developing testable libraries
