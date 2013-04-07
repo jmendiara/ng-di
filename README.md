@@ -1,8 +1,10 @@
 # ng-di
 
-Spectacular Angular Dependency Injection isolated as a library. Working in Browser and Node enviroments
+Spectacular Angular Dependency Injection isolated as a library. Working in Browser and Node environments
 
-**Current Canary Version 0.1.0**
+
+**Current Canary Version 0.1.0** [![Build Status](https://travis-ci.org/jmendiara/ng-di.png)](https://travis-ci.org/jmendiara/ng-di)
+
 
 Status: STABLE API - UNSTABLE Code sources location - All Test passing
 * Recommended * 
@@ -76,7 +78,7 @@ You can go to the [examples](examples) folder to see how to use in [node](exampl
 ## Testing
 The tests provided have been written in jasmine, and are executed in browser with Karma Runner and in Node with jasmine-node
 
-For your convenience on writting testable code using ng-di, as well as in angular, two utility functions are exposed
+For your convenience on writing testable code using ng-di, as well as in angular, two utility functions are exposed
 ```javascript
 mock.module(...);
 mock.inject(...);
@@ -132,10 +134,10 @@ grunt
 
 
 ## Aim of this project
-The goal behind this project is closing the gap between the browser and node enviroments for developing testable libraries
-and applications that could be used in both enviroments.  
+The goal behind this project is closing the gap between the browser and node environments for developing testable libraries
+and applications that could be used in both environments.
 
-Just provide different implementions for those environment dependant code (Browser XMLHttpRequest vs. Node http) and reuse 
+Just provide different implementations for those environment dependant code (Browser XMLHttpRequest vs. Node http) and reuse
 all the application code
 
 ng-di isolates you from the dependency injection in environments, but you will have to deal with the CommonsJS/AMD/no-module 
