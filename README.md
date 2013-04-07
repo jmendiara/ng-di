@@ -1,10 +1,10 @@
 # ng-di
 
 Spectacular Angular Dependency Injection isolated as a library. Working in Browser and Node environments
-[![Build Status](https://travis-ci.org/jmendiara/ng-di.png)](https://travis-ci.org/jmendiara/ng-di)
 
 
-**Current Canary Version 0.1.0**
+**Current Canary Version 0.1.0** [![Build Status](https://travis-ci.org/jmendiara/ng-di.png)](https://travis-ci.org/jmendiara/ng-di)
+
 
 Status: STABLE API - UNSTABLE Code sources location - All Test passing
 * Recommended * 
