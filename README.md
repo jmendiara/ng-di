@@ -24,7 +24,7 @@ npm install ng-di@canary
 ```
 
 Or the pre-development one 
-```
+```bash
 npm install ng-di
 ```
 
@@ -104,9 +104,11 @@ Include the [mock helper][mock] in your test flow.
 
 ## Development
 
+After cloning, the repository...
+
 **Install all dependencies**
 
-```shell
+```bash
 npm install 
 ```
 
@@ -114,24 +116,29 @@ ng-di uses grunt 0.4.x for building the browser version and for testing. You wil
 
 **Pass all test in browser and node.**
 
-Relies on Karma and assumes a Chrome browser installed on your machine
-```shell
+Relies on Karma and assumes a PhantomJS(*) browser installed on your machine
+```bash
 grunt test
 ```
 
 **Build the browser version**
 
 Creates all browser compatible code on /dist directory
-```shell
+```bash
 grunt build
 ```
 
 **Test and build**
 
-```shell
+```bash
 grunt 
 ```
 
+(*) After installing PhantomJS, add the executable to your path
+```bash
+#Add phantomJS to MacOSX PATH by editing ~/.bash_profile
+export PHANTOMJS_BIN=/Applications/phantomjs-1.9.0-macosx/bin/phantomjs 
+```
 
 ## Aim of this project
 The goal behind this project is closing the gap between the browser and node environments for developing testable libraries
