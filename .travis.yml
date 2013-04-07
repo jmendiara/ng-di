@@ -1,6 +1,5 @@
 language: node_js
 node_js:
-  - 0.6
   - 0.8
   - 0.10
 
@@ -11,8 +10,5 @@ before_install:
 before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-  - npm link
   - npm install -g grunt-cli
 
-script:
-  - grunt test
