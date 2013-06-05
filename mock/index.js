@@ -1,6 +1,6 @@
 (function (exports){
 
-  var di;
+  var di, mocha = true;
   if (typeof window !== 'undefined'){
     if (typeof require !== 'undefined'){
       exports = require('./mock');
@@ -8,6 +8,7 @@
     else {
       window.mock = exports;
     }
+    mocha = window.mocha;
     di = window.di;
   }
   else {
@@ -27,7 +28,7 @@
   });
 
   function isSpecRunning() {
-    return currentSpec && currentSpec.queue.running;
+    return currentSpec && (mocha || currentSpec.queue.running);
   }
 
   /**
