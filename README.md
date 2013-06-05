@@ -3,7 +3,7 @@
 Spectacular Angular Dependency Injection isolated as a library. Working in Browser and Node environments
 
 
-**Current Canary Version 0.1.0** [![Build Status](https://travis-ci.org/jmendiara/ng-di.png)](https://travis-ci.org/jmendiara/ng-di)
+**Current Canary Version 0.1.1** [![Build Status](https://travis-ci.org/jmendiara/ng-di.png)](https://travis-ci.org/jmendiara/ng-di)
 
 
 Status: STABLE API - UNSTABLE Code sources location - All Test passing
@@ -21,6 +21,11 @@ Status: UNSTABLE API - UNSTABLE Code sources location - No test
 Install the canary version module with: 
 ```bash
 npm install ng-di@canary
+```
+or
+
+```bash
+npm install ng-di@0.1.1
 ```
 
 Or the pre-development one 
@@ -154,7 +159,10 @@ problem by yourself. Ideas are always welcome!
 
 ng-di uses [semantic versioning](http://semver.org/)
 
-### v0.1.0 - UNSTABLE
+### v0.1.1
+* FIX compatibility with mocha in mocks
+
+### v0.1.0
 * Completely rewrite internals using commonsJS module.
 * Adding mocks for both environments
 

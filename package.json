@@ -1,7 +1,7 @@
 {
   "name": "ng-di",
   "description": "Dependency Injection for Javascript. Both for Browser and Node",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/jmendiara/ng-di",
   "author": {
     "name": "Javier Mendiara Cañardo",
@@ -51,6 +51,7 @@
   },
   "keywords": [
     "dependency-injection",
+    "dependency injection",
     "di",
     "angular-di",
     "node-di",
