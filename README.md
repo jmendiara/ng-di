@@ -188,3 +188,7 @@ ng-di uses [semantic versioning](http://semver.org/)
 ## License
 This work is more-than-heavily based on AngularJS Dependency injection. All credits must go to the Angular Developers
 Licensed under the MIT license.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jmendiara/ng-di/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
