@@ -11,6 +11,9 @@ describe('di', function(){
   it('should access injector function as starting point', function (){
     expect(di.injector).toBeFunction();
   })
+  it('should access annotate function as starting point', function (){
+    expect(di.annotate).toBeFunction();
+  })
   if (typeof window !== 'undefined'){
     it('should be in window.di while in browser mode', function (){
       expect(window.di).toBe(di);
