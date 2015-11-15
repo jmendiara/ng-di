@@ -1,0 +1,121 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/javier/.nvm/v4.2.2/bin/node',
+1 verbose cli   '/Users/javier/.nvm/v4.2.2/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@2.14.7
+3 info using node@v4.2.2
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/javier/Documents/Proyectos/ng-di',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/javier/.npm/ng-di/0.2.0/package.tgz not in flight; packing
+9 verbose tar pack [ '/Users/javier/.npm/ng-di/0.2.0/package.tgz',
+9 verbose tar pack   '/Users/javier/Documents/Proyectos/ng-di' ]
+10 verbose tarball /Users/javier/.npm/ng-di/0.2.0/package.tgz
+11 verbose folder /Users/javier/Documents/Proyectos/ng-di
+12 info prepublish ng-di@0.2.0
+13 verbose addLocalTarball adding from inside cache /Users/javier/.npm/ng-di/0.2.0/package.tgz
+14 silly cache afterAdd ng-di@0.2.0
+15 verbose afterAdd /Users/javier/.npm/ng-di/0.2.0/package/package.json not in flight; writing
+16 verbose afterAdd /Users/javier/.npm/ng-di/0.2.0/package/package.json written
+17 silly publish { name: 'ng-di',
+17 silly publish   description: 'Dependency Injection for Javascript. Both for Browser and Node',
+17 silly publish   version: '0.2.0',
+17 silly publish   homepage: 'https://github.com/jmendiara/ng-di',
+17 silly publish   author:
+17 silly publish    { name: 'Javier Mendiara Cañardo',
+17 silly publish      email: 'jmendiara@gmail.com' },
+17 silly publish   contributors:
+17 silly publish    [ { name: 'Milán Nagy', email: '123.wizek@gmail.com' },
+17 silly publish      { name: 'Pedro Henrique de Assis' } ],
+17 silly publish   repository: { type: 'git', url: 'git://github.com/jmendiara/ng-di.git' },
+17 silly publish   bugs: { url: 'https://github.com/jmendiara/ng-di/issues' },
+17 silly publish   licenses:
+17 silly publish    [ { type: 'MIT',
+17 silly publish        url: 'https://github.com/jmendiara/ng-di/blob/master/LICENSE-MIT' } ],
+17 silly publish   main: 'lib/ng-di',
+17 silly publish   engines: { node: '>= 0.8.0' },
+17 silly publish   scripts: { test: 'grunt test' },
+17 silly publish   devDependencies:
+17 silly publish    { grunt: '~0.4.1',
+17 silly publish      'grunt-contrib-compress': '0.4.1',
+17 silly publish      'grunt-contrib-clean': '0.4.0',
+17 silly publish      'grunt-contrib-concat': '~0.1.3',
+17 silly publish      'grunt-contrib-uglify': '~0.2.0',
+17 silly publish      karma: '~0.8',
+17 silly publish      shelljs: '0.1.2',
+17 silly publish      'grunt-karma': '~0.4.1',
+17 silly publish      'grunt-jasmine-node': 'https://github.com/jmendiara/grunt-jasmine-node/tarball/master',
+17 silly publish      'jasmine-node': '1.5.0',
+17 silly publish      'grunt-contrib-copy': '~0.4.1' },
+17 silly publish   keywords:
+17 silly publish    [ 'dependency-injection',
+17 silly publish      'dependency injection',
+17 silly publish      'di',
+17 silly publish      'angular-di',
+17 silly publish      'node-di',
+17 silly publish      'js-di',
+17 silly publish      'js',
+17 silly publish      'node' ],
+17 silly publish   dependencies: {},
+17 silly publish   readme: '# ng-di\r\n\r\nSpectacular Angular Dependency Injection isolated as a library. Working in Browser and Node environments\r\n\r\n\r\n**Current Canary Version 0.1.1** [![Build Status](https://travis-ci.org/jmendiara/ng-di.png)](https://travis-ci.org/jmendiara/ng-di)\r\n\r\n\r\nStatus: STABLE API - UNSTABLE Code sources location - All Test passing\r\n* Recommended * \r\n\r\n\r\n**Current Version 0.0.4**\r\n\r\nStatus: UNSTABLE API - UNSTABLE Code sources location - No test\r\n* Not recommended * \r\n\r\n\r\n## Getting Started\r\n### On the server\r\nInstall the canary version module with: \r\n```bash\r\nnpm install ng-di@canary\r\n```\r\nor\r\n\r\n```bash\r\nnpm install ng-di@0.1.1\r\n```\r\n\r\nOr the pre-development one \r\n```bash\r\nnpm install ng-di\r\n```\r\n\r\nOnce installed, start using it\r\n```javascript\r\nvar di = require(\'ng-di\');\r\ndi.module(...);\r\ndi.injector(...);\r\n```\r\n\r\n### In the browser\r\nDownload the [production version](dist/ng-di.min.js) or the [development version](dist/ng-di.js).\r\n\r\nYou can also download a [ZIP version](dist/ng-di.zip) with both flavours and the mocks helper.\r\n\r\nIn your web page:\r\n\r\n```html\r\n<script src="dist/ng-di.min.js"></script>\r\n<script>\r\ndi.module(...);\r\ndi.injector(...);\r\n</script>\r\n```\r\n\r\n\r\n## Documentation\r\nThis library simply isolates [AngularJS](http://www.angularjs.org)\r\n[dependency injection](http://docs.angularjs.org/guide/di), exposing its\r\n[module API](http://docs.angularjs.org/guide/module) as part of it.\r\n\r\nAll the DOM management has been removed, and makes this library the ideal artifact for using\r\n Javascript Dependency Injection in javascript only apps, libraries...\r\n \r\nIt\'s available as `di` instead of `angular`\r\n\r\nThe public API, considered stable, is(*):\r\n * [module](https://docs.angularjs.org/api/ng/type/angular.Module). Exposed as `di.module`\r\n * [injector](https://docs.angularjs.org/api/auto/service/$injector). Exposed as `di.injector`\r\n * [annotate](https://docs.angularjs.org/api/auto/service/$injector). Exposed as `di.annotate`\r\n\r\n(*)As this library is framework agnostic, the AngularJS concepts and module API methods `module.directive` \r\nand `module.controller` are NOT available inside the Module API\r\n\r\nOther non documented utility methods here are for private usage, and can be removed \r\n\r\nPlease, refer to Angular Documentation on this topics, as ng-di exposes them as-is.\r\n\r\n## Examples\r\nYou can go to the [examples](examples) folder to see how to use in [node](examples/node) and [browser](examples/browser)\r\n\r\n## Testing\r\nThe tests provided have been written in jasmine, and are executed in browser with Karma Runner and in Node with jasmine-node\r\n\r\nFor your convenience on writing testable code using ng-di, as well as in angular, two utility functions are exposed\r\n```javascript\r\nmock.module(...);\r\nmock.inject(...);\r\n```\r\n\r\nYou can read through [code documentation](mock/index.js#L65) or learn by watching [examples](#examples)\r\n\r\n### node\r\n```javascript\r\nvar mock = require(\'ng-di/mock\'),\r\n//mock.module and mock.inject are available\r\n```\r\n\r\n### Browser\r\nInclude the [mock helper][mock] in your test flow.\r\n\r\n[mock]: https://raw.github.com/jmendiara/ng-di/master/dist/mock.js\r\n\r\n```html\r\n<script type="text/javascript" src="mock.js"></script>\r\n<!-- mock.module and mock.inject are available -->\r\n```\r\n\r\n## Development\r\n\r\nAfter cloning, the repository...\r\n\r\n**Install all dependencies**\r\n\r\n```bash\r\nnpm install \r\n```\r\n\r\nng-di uses grunt 0.4.x for building the browser version and for testing. You will need to have installed grunt-cli as global\r\n\r\n**Pass all test in browser and node.**\r\n\r\nRelies on Karma and assumes a PhantomJS(*) browser installed on your machine\r\n```bash\r\ngrunt test\r\n```\r\n\r\n**Build the browser version**\r\n\r\nCreates all browser compatible code on /dist directory\r\n```bash\r\ngrunt build\r\n```\r\n\r\n**Test and build**\r\n\r\n```bash\r\ngrunt \r\n```\r\n\r\n(*) After installing PhantomJS, add the executable to your path\r\n```bash\r\n#Add phantomJS to MacOSX PATH by editing ~/.bash_profile\r\nexport PHANTOMJS_BIN=/Applications/phantomjs-1.9.0-macosx/bin/phantomjs \r\n```\r\n\r\n## Aim of this project\r\nThe goal behind this project is closing the gap between the browser and node environments for developing testable libraries\r\nand applications that could be used in both environments.\r\n\r\nJust provide different implementations for those environment dependant code (Browser XMLHttpRequest vs. Node http) and reuse\r\nall the application code\r\n\r\nng-di isolates you from the dependency injection in environments, but you will have to deal with the CommonsJS/AMD/no-module \r\nproblem by yourself. Ideas are always welcome!\r\n\r\n## Release History\r\n\r\nng-di uses [semantic versioning](http://semver.org/)\r\n### v0.2.0 \r\n* Expose annotate function\r\n \r\n### v0.1.1\r\n* FIX compatibility with mocha in mocks\r\n\r\n### v0.1.0\r\n* Completely rewrite internals using commonsJS module.\r\n* Adding mocks for both environments\r\n\r\n#### BREAKING CHANGES\r\n* $utils is not exposed anymore. \r\n* Module \'di\' is not registered by default\r\n* Removed lots of utility functions from being accesible. See [utils](lib/utils.js) for details.\r\n* Requiring in node does not need to recall `di`. Use: `var di = require(\'ng-di\');`\r\n\r\n### v0.0.4 \r\n* Adding more utilities functions to the code\r\n \r\n### v0.0.3 \r\n* Adding more utilities functions to the code\r\n\r\n### v0.0.2 \r\n* new service in module `di` exposing `$utils` functions\r\n\r\n### v0.0.1 \r\n * First approach\r\n\r\n\r\n## License\r\nThis work is more-than-heavily based on AngularJS Dependency injection. All credits must go to the Angular Developers\r\nLicensed under the MIT license.\r\n\r\n\r\n[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jmendiara/ng-di/trend.png)](https://bitdeli.com/free "Bitdeli Badge")\r\n\r\n',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   gitHead: '7a34a80ccc1558b2b4a310fa25139148d775cc0b',
+17 silly publish   _id: 'ng-di@0.2.0',
+17 silly publish   _shasum: 'b3b4e2241d2b22429f63b283abf73e1bd5a31c2f',
+17 silly publish   _from: '.' }
+18 verbose getPublishConfig undefined
+19 silly mapToRegistry name ng-di
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry uri https://registry.npmjs.org/ng-di
+23 verbose publish registryBase https://registry.npmjs.org/
+24 silly publish uploading /Users/javier/.npm/ng-di/0.2.0/package.tgz
+25 verbose request uri https://registry.npmjs.org/ng-di
+26 verbose request sending authorization for write operation
+27 info attempt registry request try #1 at 9:49:14 AM
+28 verbose request id 967c66c281606b9b
+29 http request PUT https://registry.npmjs.org/ng-di
+30 http 403 https://registry.npmjs.org/ng-di
+31 verbose headers { 'content-type': 'application/json',
+31 verbose headers   'cache-control': 'max-age=60',
+31 verbose headers   'content-length': '95',
+31 verbose headers   'accept-ranges': 'bytes',
+31 verbose headers   date: 'Sun, 15 Nov 2015 08:49:11 GMT',
+31 verbose headers   via: '1.1 varnish',
+31 verbose headers   connection: 'keep-alive',
+31 verbose headers   'x-served-by': 'cache-ams4133-AMS',
+31 verbose headers   'x-cache': 'MISS',
+31 verbose headers   'x-cache-hits': '0',
+31 verbose headers   'x-timer': 'S1447577350.223579,VS0,VE1708' }
+32 verbose request invalidating /Users/javier/.npm/registry.npmjs.org/ng-di on PUT
+33 error publish Failed PUT 403
+34 verbose stack Error: "You cannot publish over the previously published version 0.2.0." : ng-di
+34 verbose stack     at makeError (/Users/javier/.nvm/v4.2.2/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+34 verbose stack     at CachingRegistryClient.<anonymous> (/Users/javier/.nvm/v4.2.2/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+34 verbose stack     at Request._callback (/Users/javier/.nvm/v4.2.2/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+34 verbose stack     at Request.self.callback (/Users/javier/.nvm/v4.2.2/lib/node_modules/npm/node_modules/request/request.js:198:22)
+34 verbose stack     at emitTwo (events.js:87:13)
+34 verbose stack     at Request.emit (events.js:172:7)
+34 verbose stack     at Request.<anonymous> (/Users/javier/.nvm/v4.2.2/lib/node_modules/npm/node_modules/request/request.js:1063:14)
+34 verbose stack     at emitOne (events.js:82:20)
+34 verbose stack     at Request.emit (events.js:169:7)
+34 verbose stack     at IncomingMessage.<anonymous> (/Users/javier/.nvm/v4.2.2/lib/node_modules/npm/node_modules/request/request.js:1009:12)
+35 verbose statusCode 403
+36 verbose pkgid ng-di
+37 verbose cwd /Users/javier/Documents/Proyectos/ng-di
+38 error Darwin 14.5.0
+39 error argv "/Users/javier/.nvm/v4.2.2/bin/node" "/Users/javier/.nvm/v4.2.2/bin/npm" "publish"
+40 error node v4.2.2
+41 error npm  v2.14.7
+42 error code E403
+43 error "You cannot publish over the previously published version 0.2.0." : ng-di
+44 error If you need help, you may report this error at:
+44 error     <https://github.com/npm/npm/issues>
+45 verbose exit [ 1, true ]

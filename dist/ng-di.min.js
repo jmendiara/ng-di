@@ -1,5 +1,5 @@
 /*!
- * ng-di - v0.2.0 - 2015-11-15
+ * ng-di - v0.2.1 - 2015-11-15
  * Dependency Injection for Javascript. Both for Browser and Node
  * https://github.com/jmendiara/ng-di
  * Adaptation done 2015 Javier Mendiara Cañardo
