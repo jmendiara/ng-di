@@ -1,8 +1,8 @@
 /*!
- * ng-di - v0.1.0 - 2013-04-06
+ * ng-di - v0.2.0 - 2015-11-15
  * Dependency Injection for Javascript. Both for Browser and Node
  * https://github.com/jmendiara/ng-di
- * Adaptation done 2013 Javier Mendiara Cañardo
+ * Adaptation done 2015 Javier Mendiara Cañardo
  * Licensed MIT
  * https://github.com/jmendiara/ng-di/blob/master/LICENSE-MIT
  *
@@ -1214,7 +1214,9 @@ window.di = require('./ng-di');
 (function(exports){
   'use strict';
   exports.module = require('./module').setupModuleLoader(exports);
-  exports.injector = require('./injector').createInjector;
+  var injector = require('./injector');
+  exports.injector = injector.createInjector;
+  exports.annotate = injector.annotate;
 
 })(typeof exports === 'undefined'? (require('./ng-di')): exports);
 

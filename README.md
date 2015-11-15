@@ -67,8 +67,9 @@ All the DOM management has been removed, and makes this library the ideal artifa
 It's available as `di` instead of `angular`
 
 The public API, considered stable, is(*):
- * [module](http://docs.angularjs.org/api/angular.Module). Exposed as `di.module`
- * [injector](http://docs.angularjs.org/api/AUTO.$injector). Exposed as `di.injector`
+ * [module](https://docs.angularjs.org/api/ng/type/angular.Module). Exposed as `di.module`
+ * [injector](https://docs.angularjs.org/api/auto/service/$injector). Exposed as `di.injector`
+ * [annotate](https://docs.angularjs.org/api/auto/service/$injector). Exposed as `di.annotate`
 
 (*)As this library is framework agnostic, the AngularJS concepts and module API methods `module.directive` 
 and `module.controller` are NOT available inside the Module API
@@ -158,7 +159,9 @@ problem by yourself. Ideas are always welcome!
 ## Release History
 
 ng-di uses [semantic versioning](http://semver.org/)
-
+### v0.2.0 
+* Expose annotate function
+ 
 ### v0.1.1
 * FIX compatibility with mocha in mocks
 

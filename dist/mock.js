@@ -1,8 +1,8 @@
 /*!
- * ng-di - v0.1.0 - 2013-04-06
+ * ng-di - v0.2.0 - 2015-11-15
  * Dependency Injection for Javascript. Both for Browser and Node
  * https://github.com/jmendiara/ng-di
- * Adaptation done 2013 Javier Mendiara Cañardo
+ * Adaptation done 2015 Javier Mendiara Cañardo
  * Licensed MIT
  * https://github.com/jmendiara/ng-di/blob/master/LICENSE-MIT
  *
@@ -12,7 +12,7 @@
 
 (function (exports){
 
-  var di;
+  var di, mocha = true;
   if (typeof window !== 'undefined'){
     if (typeof require !== 'undefined'){
       exports = require('./mock');
@@ -20,6 +20,7 @@
     else {
       window.mock = exports;
     }
+    mocha = window.mocha;
     di = window.di;
   }
   else {
@@ -39,7 +40,7 @@
   });
 
   function isSpecRunning() {
-    return currentSpec && currentSpec.queue.running;
+    return currentSpec && (mocha || currentSpec.queue.running);
   }
 
   /**

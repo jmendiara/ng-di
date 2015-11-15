@@ -1,7 +1,7 @@
 {
   "name": "ng-di",
   "description": "Dependency Injection for Javascript. Both for Browser and Node",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "homepage": "https://github.com/jmendiara/ng-di",
   "author": {
     "name": "Javier Mendiara Cañardo",
@@ -11,6 +11,9 @@
     {
       "name": "Milán Nagy",
       "email": "123.wizek@gmail.com"
+    },
+    {
+      "name": "Pedro Henrique de Assis"
     }
   ],
   "repository": {
