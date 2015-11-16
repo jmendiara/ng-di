@@ -2,19 +2,7 @@
 
 Spectacular Angular Dependency Injection isolated as a library. Working in Browser and Node environments
 
-
-**Current Canary Version 0.1.1** [![Build Status](https://travis-ci.org/jmendiara/ng-di.png)](https://travis-ci.org/jmendiara/ng-di)
-
-
-Status: STABLE API - UNSTABLE Code sources location - All Test passing
-* Recommended * 
-
-
-**Current Version 0.0.4**
-
-Status: UNSTABLE API - UNSTABLE Code sources location - No test
-* Not recommended * 
-
+[![Build Status](https://travis-ci.org/jmendiara/ng-di.png)](https://travis-ci.org/jmendiara/ng-di)
 
 ## Getting Started
 ### On the server
