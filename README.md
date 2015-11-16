@@ -6,17 +6,6 @@ Spectacular Angular Dependency Injection isolated as a library. Working in Brows
 
 ## Getting Started
 ### On the server
-Install the canary version module with: 
-```bash
-npm install ng-di@canary
-```
-or
-
-```bash
-npm install ng-di@0.1.1
-```
-
-Or the pre-development one 
 ```bash
 npm install ng-di
 ```
